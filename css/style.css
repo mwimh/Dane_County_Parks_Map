@@ -1,7 +1,52 @@
-h1 {
-    font-size: 30px;
-    font-weight: bold;
-    color:darkgreen;
-    padding-left: 50px;
-    padding-top: 20px;
+#top {
+    background-color: #041B45;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0px;
 }
+
+#head {
+    font-family: Libre Franklin;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    padding-left: 120px;
+    padding-top: 0px;
+}
+
+#map {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    top: 80px;
+    left: 0%;
+    background: transparent;
+    overflow-y: hidden;
+}
+
+#bottom {
+    position: fixed;
+    top: 94%;
+    background-color: #041B45;
+    width: 100%;
+    min-height: 40px;
+    height: 100%;
+}
+
+h6 {
+    font-family: Libre Franklin;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    padding-left: 93%;
+    padding-top: 0.5%;
+}
+
+#resetButton {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    padding: 10px;
+    z-index: 400;
+  }

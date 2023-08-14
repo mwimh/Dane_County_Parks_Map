@@ -8,8 +8,8 @@
     <link href='https://fonts.googleapis.com/css?family=Libre Franklin' rel='stylesheet'>
     <!--put your external stylesheet links here-->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="library/leaflet/leaflet.css" />
-    <script src="library/leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+    <script src="lib/leaflet/leaflet.js"></script>
     <!--[if IE<9]>
             <link rel="stylesheet" href="css/style.ie.css">
         <![endif]-->
@@ -18,21 +18,24 @@
              place these within <style> tags-->
 
 </head>
+
+<div id="content">
+    <div id="map"></div>
+    <button id="resetButton">Reset Map</button>
+</div>
+
 <div id="top">
-    <header>
-        <h1>Michael Imhoff</h1>
+    <header id="head">
+        <h1>Dane County Parks</h1>
     </header>
 </div>
 
-<div id="content">
+<div id="content2">
 
     <body style="margin:0">
-        <!--put your initial page content here-->
-        <!--you can also use this space for internal scripts; place these within <script> tags-->
-
-        <!--put your external script links here-->
         <script type="text/javascript" src="lib/leaflet/leaflet-src.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+
     </body>
 </div>
 
