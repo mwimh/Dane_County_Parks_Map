@@ -92,8 +92,6 @@ function addFixedBoundaries(map) {
                 onEachFeature
             });
             parks.addTo(map)
-
-            console.log(parks)
         })
 
 
@@ -109,21 +107,15 @@ function onEachFeature(feature, layer) {
 
 //highlight function
 function highlightFeature(e) {
-    const layer = e.target;
 
-    layer.setStyle({
+    e.target.bindTooltip(e.sourceTarget.feature.properties.Name, { className: 'parkTooltip' });
+    e.target.openTooltip()
+
+    e.target.setStyle({
         weight: 6,
         color: '#eaa40e',
     });
-
-    e.target.bindPopup("I am a Park.");
-
 }
-
-function createPopup(e) {
-    e.target.bindPopup("I am a Park.");
-}
-
 
 //function to reset highlight to initial parameters
 function resetHighlight(e) {
@@ -136,18 +128,17 @@ function resetHighlight(e) {
 }
 
 function zoomToFeature(e) {
-    //reset huc10 style initially to remove previous color change
-    //fly to the center of the selected huc10
-    parkCenter = e.target.getBounds().getCenter();
+    var parkCenter = e.target.getBounds().getCenter();
     map.flyTo(parkCenter, 15);
-}
 
-function PopupContent(properties, attribute) {
-    this.properties = properties;
-    this.attribute = attribute;
-    this.employment = properties[attribute];
-    this.formatted = "<p><b>Country:</b> " + this.properties.Country + "</p><p><b>" + "Industry Emp. in " + this.year + ":</b> " + Math.round(this.properties[attribute] * 10) / 10 + "%</p>" + "<p><b>28-Year Change:</b> " + this.change + "%</p>";
-};
+    var parkName = e.sourceTarget.feature.properties.Name
+    var parkNameShort = parkName.replace(" ", "")
+
+    var popContent = parkName + '<br><a href="lib/maps/' + parkNameShort + '.pdf">Enhanced Map PDF</a>'
+
+    e.target.bindPopup(popContent, { className: 'parkPopup', offset: [0, -50] })
+    e.target.openPopup()
+}
 
 // Create the map once everything is loaded
 document.addEventListener('DOMContentLoaded', createMap);

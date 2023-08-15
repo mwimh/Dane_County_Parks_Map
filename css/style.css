@@ -49,4 +49,14 @@ h6 {
     left: 60px;
     padding: 10px;
     z-index: 400;
-  }
+}
+
+.parkTooltip {
+    font-family: Libre Franklin;
+    font-size: 1.4em;
+}
+
+.parkPopup {
+    font-family: Libre Franklin;
+    font-size: 1.6em;
+}
