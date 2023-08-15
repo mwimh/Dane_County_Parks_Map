@@ -141,7 +141,7 @@ function zoomToFeature(e) {
 
     if (parkName == "Morton Forest") {
         var parkNameShort = parkName.replace(" ", "")
-        var popContent = parkName + '<br><span id="enhParkLink"><a href="lib/maps/' + parkNameShort + '.pdf" target="_blank">Enhanced Map PDF</a></span><br><span id="daneCtyMaps"><a href="https://parks-lwrd.countyofdane.com/ParkSystem/List" target="_blank">Dane County Parks Maps</a></span>'
+        var popContent = parkName + '<br><span id="enhParkLink"><a href="lib/maps/' + parkNameShort + '.png" target="_blank">Enhanced Map</a>  <a href="lib/maps/' + parkNameShort + '.pdf" target="_blank">(PDF)</a></span><br><span id="daneCtyMaps"><a href="https://parks-lwrd.countyofdane.com/ParkSystem/List" target="_blank">Dane County Parks Maps</a></span>'
     } else {
         var popContent = parkName + '<br><span id="daneCtyMaps"><a href="https://parks-lwrd.countyofdane.com/ParkSystem/List" target="_blank">Dane County Parks Maps</a></span>'
     }
