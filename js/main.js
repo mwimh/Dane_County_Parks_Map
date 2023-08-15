@@ -1,7 +1,5 @@
 // Declare global variables
 var map;
-var dataStats = {};
-
 
 // Create the basemap
 function createMap() {
@@ -22,8 +20,6 @@ function createMap() {
     L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
     }).addTo(map);
-
-    //map.invalidateSize()
 
     addFixedBoundaries(map);
 };

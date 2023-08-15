@@ -39,8 +39,9 @@ h6 {
     font-size: 0.8em;
     font-weight: bold;
     color: white;
-    padding-left: 93%;
+    padding-left: 75%;
     padding-top: 0.5%;
+    opacity: 70%;
 }
 
 #resetButton {
@@ -89,6 +90,7 @@ h6 {
 
 #downloadButton {
     position: absolute;
-    right: 40px;
+    right: 90px;
     top: 25px;
+    font-size: 1.1em;
 }
