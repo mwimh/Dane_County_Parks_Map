@@ -11,8 +11,8 @@
     font-size: 15px;
     font-weight: bold;
     color: white;
-    padding-left: 120px;
-    padding-top: 0px;
+    padding-left: 40px;
+    padding-top: 10px;
 }
 
 #map {
@@ -58,5 +58,31 @@ h6 {
 
 .parkPopup {
     font-family: Libre Franklin;
-    font-size: 1.6em;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+#enhParkLink {
+    font-size: 15px;
+}
+
+#daneCtyMaps {
+    font-size: 15px;
+}
+
+
+#resetButton {
+    font-family: Libre Franklin;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#parksTitle {
+    font-size: 40px;
+    padding-left: 40px;
+}
+
+#subtitle {
+    font-size: 15px;
 }

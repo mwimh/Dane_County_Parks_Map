@@ -107,9 +107,15 @@ function onEachFeature(feature, layer) {
 
 //highlight function
 function highlightFeature(e) {
+    var zoomLvl = map.getZoom()
 
-    e.target.bindTooltip(e.sourceTarget.feature.properties.Name, { className: 'parkTooltip' });
-    e.target.openTooltip()
+    if (zoomLvl > 14) {
+        e.target.bindTooltip(e.sourceTarget.feature.properties.Name, { className: 'parkTooltip', offset: [100, 0] });
+        e.target.openTooltip()
+    } else {
+        e.target.bindTooltip(e.sourceTarget.feature.properties.Name, { className: 'parkTooltip' });
+        e.target.openTooltip()
+    }
 
     e.target.setStyle({
         weight: 6,
@@ -132,9 +138,13 @@ function zoomToFeature(e) {
     map.flyTo(parkCenter, 15);
 
     var parkName = e.sourceTarget.feature.properties.Name
-    var parkNameShort = parkName.replace(" ", "")
 
-    var popContent = parkName + '<br><a href="lib/maps/' + parkNameShort + '.pdf">Enhanced Map PDF</a>'
+    if (parkName == "Morton Forest") {
+        var parkNameShort = parkName.replace(" ", "")
+        var popContent = parkName + '<br><span id="enhParkLink"><a href="lib/maps/' + parkNameShort + '.pdf" target="_blank">Enhanced Map PDF</a></span><br><span id="daneCtyMaps"><a href="https://parks-lwrd.countyofdane.com/ParkSystem/List" target="_blank">Dane County Parks Maps</a></span>'
+    } else {
+        var popContent = parkName + '<br><span id="daneCtyMaps"><a href="https://parks-lwrd.countyofdane.com/ParkSystem/List" target="_blank">Dane County Parks Maps</a></span>'
+    }
 
     e.target.bindPopup(popContent, { className: 'parkPopup', offset: [0, -50] })
     e.target.openPopup()
