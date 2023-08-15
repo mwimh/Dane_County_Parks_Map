@@ -24,16 +24,15 @@ function createMap() {
     addFixedBoundaries(map);
 };
 
-
+//Function to extract park names
 function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent);
     }
 }
 
+//Add overlay data to map
 function addFixedBoundaries(map) {
-
     fetch("data/backGrnd.json")
         .then(function (response) {
             return response.json();
@@ -89,10 +88,9 @@ function addFixedBoundaries(map) {
             });
             parks.addTo(map)
         })
-
-
 }
 
+// Specify functions run at event triggers
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
@@ -101,7 +99,7 @@ function onEachFeature(feature, layer) {
     });
 }
 
-//highlight function
+// Highlight parks and generate park name tooltip on mouseover
 function highlightFeature(e) {
     var zoomLvl = map.getZoom()
 
@@ -119,7 +117,7 @@ function highlightFeature(e) {
     });
 }
 
-//function to reset highlight to initial parameters
+// Reset highlight to initial parameters
 function resetHighlight(e) {
     parks.setStyle({
         fillColor: "green",
@@ -129,6 +127,7 @@ function resetHighlight(e) {
     })
 }
 
+// Zoom to park and generate popup on click
 function zoomToFeature(e) {
     var parkCenter = e.target.getBounds().getCenter();
     map.flyTo(parkCenter, 15);
