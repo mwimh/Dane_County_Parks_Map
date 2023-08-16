@@ -69,6 +69,25 @@ function addFixedBoundaries(map) {
             daneCty.addTo(map)
         })
 
+    fetch("data/daneTrails.json")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            trails = new L.geoJson(json, {
+                style: function (feature) {
+                    return {
+                        fillColor: "none",
+                        color: "brown",
+                        weight: 0.75,
+                        opacity: 1,
+                        className: 'trails'
+                    }
+                },
+            });
+            trails.addTo(map)
+        })
+
     fetch("data/parks.json")
         .then(function (response) {
             return response.json();
@@ -89,24 +108,7 @@ function addFixedBoundaries(map) {
             parks.addTo(map)
         })
 
-    fetch("data/daneTrails.json")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (json) {
-            trails = new L.geoJson(json, {
-                style: function (feature) {
-                    return {
-                        fillColor: "none",
-                        color: "brown",
-                        weight: 0.75,
-                        opacity: 1,
-                        className: 'trails'
-                    }
-                },
-            });
-            trails.addTo(map)
-        })
+
 }
 
 // Specify functions run at event triggers
