@@ -89,7 +89,7 @@ function addFixedBoundaries(map) {
             parks.addTo(map)
         })
 
-        fetch("data/daneTrails.json")
+    fetch("data/daneTrails.json")
         .then(function (response) {
             return response.json();
         })
