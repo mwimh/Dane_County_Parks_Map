@@ -136,6 +136,7 @@ function highlightFeature(e) {
         weight: 6,
         color: '#eaa40e',
     });
+    parks.bringToFront();
 }
 
 // Reset highlight to initial parameters
@@ -146,6 +147,7 @@ function resetHighlight(e) {
         weight: 3,
         opacity: 0.8,
     })
+    parks.bringToFront();
 }
 
 // Zoom to park and generate popup on click
